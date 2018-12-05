@@ -51,6 +51,7 @@ $(document).ready(function () {
     }
     CalibrationPoints[id]++; // increments values
 
+
     if (CalibrationPoints[id] == 5) { //only turn to yellow after 5 clicks
       $(this).css('background-color', 'yellow');
       $(this).prop('disabled', true); //disables the button
