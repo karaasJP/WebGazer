@@ -16,20 +16,31 @@ Instructions on use can be found in the README repository.
   <TITLE>DualCam Demo</TITLE>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <script async type="text/javascript" src="./webgazer.js"></script>
+  <!-- <script src="./js/dualcam2.js"></script> -->
 </head>
 
 <!-- BODY -->
 
 <body LANG="ja" LINK="#0000ff" DIR="LTR">
 
+  <!-- 変更場所 -->
+  <div class="select">
+    <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+  </div>
+  <div class="select">
+    <label for="videoSource">Video source: </label><select id="videoSource"></select>
+  </div>
+  <video muted autoplay></video>
+  <!-- ここまで -->
+
+
   <canvas id="plotting_canvas" width="500" height="500" style="cursor:crosshair;"></canvas>
 
-  <!-- <script src="./js/main.js"></script> -->
-  <script src="./js/dualcam2.js"></script>
+  <script src="./js/main.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="./js/resize_canvas.js"></script>
-
+  <script src="./js/dualcam2.js"></script>
 </body>
 
 </html>
