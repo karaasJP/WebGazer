@@ -1,5 +1,15 @@
+'use strict';
+
+var videoElement = document.querySelector('video');
+var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
+console.log(videoSelect);
+
+navigator.mediaDevices.enumerateDevices()
+  .then(gotDevices).then(getStream).catch(handleError);
+
+audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
 
 function gotDevices(deviceInfos) {
@@ -20,7 +30,6 @@ function gotDevices(deviceInfos) {
     }
   }
 }
-
 
 function getStream() {
   if (window.stream) {

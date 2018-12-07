@@ -16,7 +16,50 @@ Instructions on use can be found in the README repository.
   <TITLE>DualCam Demo</TITLE>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <script async type="text/javascript" src="./webgazer.js"></script>
-  <!-- <script src="./js/dualcam2.js"></script> -->
+
+
+
+  <!-- <style>
+    body,
+    html {
+      width: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    div#container {
+      max-width: 100%;
+    }
+
+    video.rear {
+      background: none;
+      height: 99.4vh;
+    }
+
+    video.front {
+      background: none;
+      min-width: 20vw;
+      height: auto;
+      width: auto;
+      /* left: 0; */
+    }
+
+    video.bgvid {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      /* min-width: 100%; */
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background-size: cover;
+    }
+  </style> -->
+
+
 </head>
 
 <!-- BODY -->
@@ -24,12 +67,29 @@ Instructions on use can be found in the README repository.
 <body LANG="ja" LINK="#0000ff" DIR="LTR">
 
   <!-- 変更場所 -->
+  <!-- <div id="container">
+    <video id="qvga" class="front" autoplay></video>
+    <video id="hd" class="bgvid" autoplay></video>
+  </div> -->
+
+  <style>
+    #aaa {
+      padding-top: 400px;
+    }
+
+    #aa {
+      padding-top: 400px;
+    }
+  </style>
+
   <div class="select">
     <label for="audioSource">Audio source: </label><select id="audioSource"></select>
   </div>
-  <div class="select">
+
+  <div class="select" id="aaa">
     <label for="videoSource">Video source: </label><select id="videoSource"></select>
   </div>
+
   <video muted autoplay></video>
   <!-- ここまで -->
 
@@ -37,10 +97,11 @@ Instructions on use can be found in the README repository.
   <canvas id="plotting_canvas" width="500" height="500" style="cursor:crosshair;"></canvas>
 
   <script src="./js/main.js"></script>
+  <!-- <script src="./js/dualcam2.js"></script> -->
+  <!-- <script src="./js/multicam.js"></script> -->
 
   <!-- Latest compiled JavaScript -->
   <script src="./js/resize_canvas.js"></script>
-  <script src="./js/dualcam2.js"></script>
 </body>
 
 </html>
