@@ -105,3 +105,15 @@ li {
     bottom:2vw;
     right:2vw;
 }
+
+/* hmtl selectbox top margin */
+div.select {
+      padding-top: 228px;
+    }
+/* videoの位置を調整したい */
+#rear{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+}
