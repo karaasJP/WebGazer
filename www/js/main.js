@@ -47,13 +47,6 @@ function ClearCanvas() {
 }
 
 /**
-  * Show the help instructions right at the start.
-  */
-// function helpModalShow() {
-//   $('#helpModal').modal('show');
-// }
-
-/**
  * Restart the calibration process by clearing the local storage and reseting the calibration point
  */
 // function Restart() {
@@ -91,6 +84,11 @@ function gotDevices(deviceInfos) {
       console.log('Found one other kind of source/device: ', deviceInfo);
     }
   }
+
+  var options = document.getElementById('videoSource').options;
+  console.log(options);
+  options[1].selected = true;
+
 }
 
 function getStream() {
