@@ -70,7 +70,8 @@ li {
 /* Calibration point position */
 #Pt1{
     top: 2vw;
-    left:355px;
+    left: 2vw;
+    margin-left:355px;
 }
 #Pt2{
     top: 2vw;
@@ -80,6 +81,7 @@ li {
 #Pt3{
     top: 2vw;
     right:2vw;
+    margin-right: 40px;
 }
 #Pt4{
     top:50vh;
@@ -94,6 +96,7 @@ li {
 #Pt6{
     top: 50vh;
     right:2vw;
+    margin-right: 40px;
 }
 #Pt7{
     bottom:2vw;
@@ -108,6 +111,7 @@ li {
 #Pt9{
     bottom:2vw;
     right:2vw;
+    margin-right: 40px;
 }
 
 /* hmtl selectbox top margin */
