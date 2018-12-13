@@ -69,25 +69,27 @@ li {
 
 /* Calibration point position */
 #Pt1{
-    top: 70px;
-    left:340px;
+    top: 2vw;
+    left:355px;
 }
 #Pt2{
-    top: 70px;
+    top: 2vw;
     left:50vw;
-    margin-left: 340;
+    margin-left: 177.5px;
 }
 #Pt3{
-    top: 70px;
+    top: 2vw;
     right:2vw;
 }
 #Pt4{
     top:50vh;
     left:2vw;
+    margin-left: 355px;
 }
 #Pt5{
     top: 50vh;
     left: 50vw;
+    margin-left: 177.5px;
 }
 #Pt6{
     top: 50vh;
@@ -96,10 +98,12 @@ li {
 #Pt7{
     bottom:2vw;
     left: 2vw;
+    margin-left: 355px;
 }
 #Pt8{
     bottom:2vw;
     left:50vw;
+    margin-left: 177.5px;
 }
 #Pt9{
     bottom:2vw;
@@ -108,7 +112,7 @@ li {
 
 /* hmtl selectbox top margin */
 div.select {
-    padding-top: 228px;
+    padding-top: 243px;
     }
     
 /* videoの位置を調整したい */
@@ -118,4 +122,13 @@ video#rear{
     bottom: 0px;
     max-height: 100%;
     min-width: 80%;
+}
+
+div.key{
+    background-color: aquamarine;
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 280px;
+    height: 200px;
+    font-size: 130%;
 }
