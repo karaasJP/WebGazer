@@ -29,5 +29,7 @@
 *.cpuprofile
 node_modules/
 www/node_modules/
+! www/node_modules/bootstrap/dist/
+! www/node_modules/sweetalert/dist/
 build/webgazer.js
 build/webgazer.min.js
