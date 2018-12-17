@@ -28,11 +28,11 @@
 !/www/media/video/demo.mp4
 *.cpuprofile
 node_modules/
-www/node_modules/
 ! node_modules/jquery/dist/jquery.min.js
+! node_modules/jquery/dist/jquery.min.js
+www/node_modules/
 ! www/node_modules/bootstrap/dist/js/bootstrap.min.js
 ! www/node_modules/sweetalert/dist/sweetalert.min.js
 ! www/node_modules/bootstrap/dist/css/bootstrap.min.css
-! node_modules/jquery/dist/jquery.min.js
 build/webgazer.js
 build/webgazer.min.js
