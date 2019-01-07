@@ -129,10 +129,23 @@ video#rear{
 }
 
 div.key{
-    background-color: aquamarine;
+    position: absolute;
+    background-color: rgb(250, 240, 240);
     margin-top: 5px;
     margin-left: 15px;
     width: 280px;
     height: 200px;
     font-size: 130%;
+}
+
+div.Coor{
+    position: relative;
+    margin-top: 1em;
+    margin-left: 15px;
+}
+
+div#message{
+    position: relative;
+    margin-top: 15px;
+    margin-left: 15px;
 }
