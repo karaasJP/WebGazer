@@ -1,5 +1,5 @@
 body {
-    min-width:600px!important;
+    min-width: 600px !important;
 }
 
 /* Video Feed Styling */
@@ -12,17 +12,18 @@ body {
     left: 320px;
     z-index: 0;
     box-shadow: 0px 3px 5px #ddd;
-    border:0px;
+    border: 0px;
     background-color: #fff;
 }
 
-#Accuracy a{
+#Accuracy a {
     background-color: #222;
     color: #eee;
     left: -15px;
     padding-left: 80px;
     padding-right: 40px;
 }
+
 #Accuracy {
     background-color: #222;
     padding-left: inherit;
@@ -31,6 +32,7 @@ body {
 li {
     padding-left: 50px;
 }
+
 .navbar-right li {
     padding-right: 20px;
 }
@@ -41,20 +43,23 @@ li {
     background: none;
     color: #777;
 }
+
 .helpBtn a {
     background: none;
     color: #777;
 }
+
 .helpBtn a:hover {
-    color: black!important;
+    color: black !important;
     text-decoration: none;
 }
+
 .modal-header {
-    border-bottom: none!important;
+    border-bottom: none !important;
 }
 
 /* Calibration button styling */
-.Calibration{
+.Calibration {
     width: 20px;
     height: 20px;
     -webkit-border-radius: 25px;
@@ -64,63 +69,71 @@ li {
     opacity: 0.2;
     border-color: black;
     border-style: solid;
-    position:fixed;
+    position: fixed;
 }
 
 /* Calibration point position */
-#Pt1{
+#Pt1 {
     top: 2vw;
     left: 2vw;
-    margin-left:355px;
-}
-#Pt2{
-    top: 2vw;
-    left:50vw;
-    margin-left: 177.5px;
-}
-#Pt3{
-    top: 2vw;
-    right:2vw;
-    margin-right: 40px;
-}
-#Pt4{
-    top:50vh;
-    left:2vw;
     margin-left: 355px;
 }
-#Pt5{
+
+#Pt2 {
+    top: 2vw;
+    left: 50vw;
+    margin-left: 177.5px;
+}
+
+#Pt3 {
+    top: 2vw;
+    right: 2vw;
+    margin-right: 40px;
+}
+
+#Pt4 {
+    top: 50vh;
+    left: 2vw;
+    margin-left: 355px;
+}
+
+#Pt5 {
     top: 50vh;
     left: 50vw;
     margin-left: 177.5px;
 }
-#Pt6{
+
+#Pt6 {
     top: 50vh;
-    right:2vw;
+    right: 2vw;
     margin-right: 40px;
 }
-#Pt7{
-    bottom:2vw;
+
+#Pt7 {
+    bottom: 2vw;
     left: 2vw;
     margin-left: 355px;
 }
-#Pt8{
-    bottom:2vw;
-    left:50vw;
+
+#Pt8 {
+    bottom: 2vw;
+    left: 50vw;
     margin-left: 177.5px;
 }
-#Pt9{
-    bottom:2vw;
-    right:2vw;
+
+#Pt9 {
+    bottom: 2vw;
+    right: 2vw;
     margin-right: 40px;
 }
 
 /* hmtl selectbox top margin */
 div.select {
     padding-top: 243px;
-    }
-    
+}
+
 /* videoの位置を調整したい */
-video#rear{
+video#rear {
     position: absolute;
     right: 0px;
     bottom: 0px;
@@ -128,7 +141,7 @@ video#rear{
     min-width: 80%;
 }
 
-div.key{
+div.key {
     position: absolute;
     background-color: rgb(250, 240, 240);
     margin-top: 5px;
@@ -138,13 +151,13 @@ div.key{
     font-size: 130%;
 }
 
-div.Coor{
+div.Coor {
     position: relative;
     margin-top: 1em;
     margin-left: 15px;
 }
 
-div#message{
+div#message {
     position: relative;
     margin-top: 15px;
     margin-left: 15px;
