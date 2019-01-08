@@ -10,6 +10,7 @@
     "browser-sync": "^2.24.4",
     "d3": "3.5.9",
     "jquery": "^3.0.0",
+    "jshint": "^2.9.7",
     "sweetalert": "^2.1.0"
   },
   "bugs": {
