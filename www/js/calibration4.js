@@ -69,7 +69,10 @@ y[4] = y[5] = y[6] = 469;
 y[7] = y[8] = y[9] = 875;
 
 function handleKeydown(event) {
-  console.log(xydata);
+  if (xydata) {
+    console.log("x: " + xydata.x);
+    console.log("y: " + xydata.y);
+  }
   // キーコード
   var keyCode = event.keyCode;
   console.log("押されたキーのコード : " + keyCode);
@@ -90,9 +93,10 @@ function handleKeydown(event) {
 
     var calcolor = document.getElementById("Pt" + row);
     times[row] += 1;
-    console.log(times[row]);
-    calcolor.style.opacity = String(0.2 * times[row] + 0.2);
-    if (times[row] >= 5) {
+    // console.log(times[row]);
+    if (times[row] < 5) {
+      calcolor.style.opacity = String(0.2 * times[row] + 0.2);
+    } else {
       calcolor.style.backgroundColor = "yellow";
     }
   }
