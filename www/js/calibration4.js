@@ -1,4 +1,5 @@
 var xydata;
+var strXYdata = "";
 
 window.onload = function () {
 
@@ -81,9 +82,20 @@ function handleKeydown(event) {
   if (48 <= keyCode && keyCode <= 90)
     target.innerHTML += String.fromCharCode(keyCode);
 
+  // 1~9のキーが入力されたとき．
   if (48 <= keyCode && keyCode <= 57) {
     var row = keyCode - 48;
 
+    // strXYdataに座標データを保存する
+    strXYdata += "row:" + row;
+    if (xydata) {
+      strXYdata += "  x:" + xydata.x;
+      strXYdata += "  y:" + xydata.y;
+    }
+    strXYdata += "  times:" + String(times[row] + 1);
+    strXYdata += "\n";
+
+    // 指定した座標をクリックしたように動作させる
     var elem = document.elementFromPoint(0, 0);
     elem.dispatchEvent(new MouseEvent("click", {
       clientX: x[row],
@@ -93,16 +105,23 @@ function handleKeydown(event) {
 
     var calcolor = document.getElementById("Pt" + row);
     times[row] += 1;
+
     // console.log(times[row]);
+    // ターゲットの濃さをかえる
     if (times[row] < 5) {
       calcolor.style.opacity = String(0.2 * times[row] + 0.2);
     } else {
       calcolor.style.backgroundColor = "yellow";
     }
   }
+
+  // Oを押したら出力
+  if (keyCode == 79) {
+    outputTxt();
+  }
 }
 
-
+// マウスの座標をページ内に出力
 window.addEventListener("mousemove", Coordinate);
 
 function Coordinate(e) {
@@ -110,4 +129,38 @@ function Coordinate(e) {
   var mY = e.pageY;
   document.getElementById("txtX").value = mX;
   document.getElementById("txtY").value = mY;
+}
+
+
+// テキストファイルを生成して出力
+function AsciiToUint8Array(S) {
+  var len = S.length;
+  var P = new Uint8Array(len);
+  for (var i = 0; i < len; i++) {
+    P[i] = S[i].charCodeAt(0);
+  }
+  return P;
+}
+
+function SaveToFile(FileName, Stream) {
+  if (window.navigator.msSaveBlob) {
+    window.navigator.msSaveBlob(new Blob([Stream.subarray(0, Stream.length)], {
+      type: "text/plain"
+    }), FileName);
+  } else {
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([Stream.subarray(0, Stream.length)], {
+      type: "text/plain"
+    }));
+    //a.target   = '_blank';
+    a.download = FileName;
+    document.body.appendChild(a) //  FireFox specification
+    a.click();
+    document.body.removeChild(a) //  FireFox specification
+  }
+}
+
+function outputTxt() {
+  var Stream = new Uint8Array(AsciiToUint8Array(strXYdata));
+  SaveToFile('output.txt', Stream);
 }
