@@ -25,8 +25,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 var objectdetect = (function() {
-	"use strict";
+  "use strict";
     	
     var /**
 		 * Converts from a 4-channel RGBA source image to a 1-channel grayscale
@@ -10264,7 +10265,7 @@ var mosseFilterResponses = function() {
         for (var key in stats) {
             str += key + ': ' + stats[key] + '\n';
         }
-        para.innerText = str;
+     para.innerText = str;
     }
 
     /**
@@ -10621,8 +10622,12 @@ function store_points(x, y, k) {
     * @param {x} x - The x co-ordinate of the desired point to plot
     * @param {y} y - The y co-ordinate of the desired point to plot
     */
+
+    
+
     function drawCoordinates(colour,x,y){
         var ctx = document.getElementById("plotting_canvas").getContext('2d');
+
         ctx.fillStyle = colour; // Red color
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, Math.PI * 2, true);
@@ -10704,9 +10709,10 @@ function store_points(x, y, k) {
     var smoothingVals = new webgazer.util.DataWindow(4);
     var k = 0;
 
-    function loop() {
-
+  function loop() {
         if (!paused) {
+            // if(getPrediction())
+            // console.log(getPrediction().x);
 
             // Paint the latest video frame into the canvas which will be analyzed by WebGazer
             // [20180729 JT] Why do we need to do this? clmTracker does this itself _already_, which is just duplicating the work.
@@ -10738,7 +10744,6 @@ function store_points(x, y, k) {
 
 
             if( latestGazeData ) {
-
                 smoothingVals.push(latestGazeData);
                 var x = 0;
                 var y = 0;
@@ -10748,6 +10753,18 @@ function store_points(x, y, k) {
                     y += smoothingVals.get(d).y;
                 }
                 var pred = webgazer.util.bound({'x':x/len, 'y':y/len});
+
+                // var canvas = document.getElementById('plotting_canvas');
+                // var context = canvas.getContext('2d');
+                // context.clearRect(0, 0, canvas.width, canvas.height);
+                // drawCoordinates('blue', latestGazeData.x, latestGazeData.y);
+                if (stockSize >= 0) {
+                    strXYdata += "x: " + xydata.x;
+                    strXYdata += " y: " + xydata.y;
+                    strXYdata += " stock:" + stockSize + "\n";
+                    stockSize--;
+                }
+              
 
                 if (store_points_var) {
                     drawCoordinates('blue',pred.x,pred.y); //draws the previous predictions
