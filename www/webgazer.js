@@ -10758,12 +10758,22 @@ function store_points(x, y, k) {
                 // var context = canvas.getContext('2d');
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 // drawCoordinates('blue', latestGazeData.x, latestGazeData.y);
-                if (stockSize >= 0) {
+
+              // 座標を取得している間ボックスの色を変える
+              if (divKey == undefined)
+                  var divKey = document.getElementById("key");
+              if (stockSize == 10)
+                  divKey.style.backgroundColor = "yellow";
+              else if (stockSize == 0)
+                  divKey.style.backgroundColor = "rgb(250, 240, 240)";
+                
+                if (stockSize > 0) {
                     strXYdata += "x: " + xydata.x;
                     strXYdata += " y: " + xydata.y;
                     strXYdata += " stock:" + stockSize + "\n";
                     stockSize--;
                 }
+              
               
 
                 if (store_points_var) {

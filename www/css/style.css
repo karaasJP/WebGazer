@@ -142,14 +142,15 @@ video#rear {
     min-width: 80%;
 }
 
-div.key {
+div#key {
     position: absolute;
     background-color: rgb(250, 240, 240);
     margin-top: 5px;
     margin-left: 15px;
     width: 280px;
-    height: 200px;
-    font-size: 130%;
+    min-height: 200px;
+    height: inherit;
+    font-size: 120%;
 }
 
 div.Coor {

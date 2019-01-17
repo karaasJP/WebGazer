@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+This is an example HTML that shows how WebGazer can be used on a website.
+This file provides the additional features:
+  * An integrated, intuitive and sleek action bar with an informative "help" module accessible at all times
+  * Structured 9-point calibration system
+  * Accuracy measure of predictions based on calibration process
+  * Video feedback regarding face positioning
+  * Improved eye predictions visible to the user
+Instructions on use can be found in the README repository.
+-->
+<html>
+
+<head>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+  <TITLE>WebGazer Demo</TITLE>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <script async type="text/javascript" src="./webgazer.js"></script>
+</head>
+
+<body LANG="en-US" LINK="#0000ff" DIR="LTR">
+
+  <canvas id="plotting_canvas" width="500" height="500" style="cursor:crosshair;"></canvas>
+
+  <!-- 変更箇所 -->
+  <div hidden class="select">
+    <label for="audioSource">Audio: </label><select id="audioSource"></select>
+  </div>
+
+  <div class="select">
+    <label for="videoSource">Video: </label><select id="videoSource"></select>
+  </div>
+
+  <div id="key">
+    <div class="Coor">
+      <input type="text" id="txtX" />
+      <input type="text" id="txtY" />
+    </div>
+    <div id="message"></div>
+  </div>
+
+  <video muted autoplay id="rear"></video>
+  <script src="./js/dualcam.js"></script>
+
+
+  <script async type="text/javascript" src="./js/calibration5.js"></script>
+
+  <!-- Calibration points -->
+  <div class="calibrationDiv">
+    <input type="button" class="Calibration" id="Pt1"></input>
+    <input type="button" class="Calibration" id="Pt2"></input>
+    <input type="button" class="Calibration" id="Pt3"></input>
+    <input type="button" class="Calibration" id="Pt4"></input>
+    <input type="button" class="Calibration" id="Pt5"></input>
+    <input type="button" class="Calibration" id="Pt6"></input>
+    <input type="button" class="Calibration" id="Pt7"></input>
+    <input type="button" class="Calibration" id="Pt8"></input>
+    <input type="button" class="Calibration" id="Pt9"></input>
+  </div>
+
+
+  <!-- Latest compiled JavaScript -->
+  <script src="./js/resize_canvas.js"></script>
+  <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+</body>
+
+</html>
