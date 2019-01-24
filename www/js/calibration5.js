@@ -7,7 +7,7 @@ ydataStock.fill(0);
 var avgXdataStock = 0;
 var avgYdataStock = 0;
 var stockSize = 0;
-var danraku = 0;
+var line = 0;
 
 window.onload = function () {
 
@@ -215,8 +215,8 @@ function handleKeydown(event) {
     stockSize = 10;
   }
   if (keyCode == 32) {
-    danraku += 1;
-    target.innerHTML += "<br>行：" + danraku;
+    line += 1;
+    target.innerHTML += "<br>行：" + line;
   }
 }
 
