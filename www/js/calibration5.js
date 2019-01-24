@@ -216,7 +216,7 @@ function handleKeydown(event) {
   }
   if (keyCode == 32) {
     danraku += 1;
-    target.innerHTML += "<br>段落：" + danraku;
+    target.innerHTML += "<br>行：" + danraku;
   }
 }
 
