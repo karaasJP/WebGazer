@@ -1,61 +1,3 @@
-window.onload = function () {
-
-  //start the webgazer tracker
-  webgazer.setRegression('ridge') /* currently must set regression and tracker */
-    .setTracker('clmtrackr')
-    .setGazeListener(function (data, clock) {
-      // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-      // console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
-    })
-    .begin()
-    .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
-
-
-  //Set up the webgazer video feedback.
-  var setup = function () {
-
-    //Set up the main canvas. The main canvas is used to calibrate the webgazer.
-    var canvas = document.getElementById("plotting_canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.position = 'fixed';
-  };
-
-  function checkIfReady() {
-    if (webgazer.isReady()) {
-      setup();
-    } else {
-      setTimeout(checkIfReady, 100);
-    }
-  }
-  setTimeout(checkIfReady, 100);
-};
-
-window.onbeforeunload = function () {
-  // webgazer.end(); //Uncomment if you want to save the data even if you reload the page.
-  // window.localStorage.clear(); //Comment out if you want to save data across different sessions
-}
-
-
-/**
- * Clear the canvas and the calibration button.
- */
-function ClearCanvas() {
-  $(".Calibration").hide();
-  var canvas = document.getElementById("plotting_canvas");
-  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-}
-
-/**
- * Restart the calibration process by clearing the local storage and reseting the calibration point
- */
-// function Restart() {
-//   document.getElementById("Accuracy").innerHTML = "<a>Not yet Calibrated</a>";
-//   ClearCalibration();
-//   PopUpInstruction();
-// }
-
-
 var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
@@ -87,7 +29,8 @@ function gotDevices(deviceInfos) {
 
   var options = document.getElementById('videoSource').options;
   console.log(options);
-  options[1].selected = true;
+
+  // options[1].selected = true;  // 2番めをセレクテッドする
 
 }
 
@@ -100,15 +43,19 @@ function getStream() {
 
   var constraints = {
     audio: {
-      deviceId: { exact: audioSelect.value }
+      deviceId: {
+        exact: audioSelect.value
+      }
     },
     video: {
-      deviceId: { exact: videoSelect.value }
+      deviceId: {
+        exact: videoSelect.value
+      }
     }
   };
 
   navigator.mediaDevices.getUserMedia(constraints).
-    then(gotStream).catch(handleError);
+  then(gotStream).catch(handleError);
 }
 
 function gotStream(stream) {

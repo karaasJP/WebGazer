@@ -133,6 +133,15 @@ div.select {
     padding-top: 243px;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    top: 0px;
+    position: absolute;
+}
+
 /* videoの位置を調整したい */
 video#rear {
     position: absolute;

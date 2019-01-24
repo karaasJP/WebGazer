@@ -7,7 +7,7 @@ ydataStock.fill(0);
 var avgXdataStock = 0;
 var avgYdataStock = 0;
 var stockSize = 0;
-
+var danraku = 0;
 
 window.onload = function () {
 
@@ -103,11 +103,11 @@ var getDistance = function (posX1, posY1, posX2, posY2) {
 var closest = function (posX, posY) {
   var min = 2000;
   var minN = 0;
-  var distanceArray = new Array(9);
-  for (var i = 0; i < 9; i++) {
+  var distanceArray = new Array(10);
+  for (var i = 1; i < 10; i++) {
     distanceArray[i] = getDistance(x[i], y[i], posX, posY);
   }
-  for (i = 0; i < 9; i++)
+  for (i = 1; i < 10; i++)
     if (min > distanceArray[i]) {
       min = distanceArray[i];
       minN = i;
@@ -213,6 +213,10 @@ function handleKeydown(event) {
   // sを押したとき
   if (keyCode == 83) {
     stockSize = 10;
+  }
+  if (keyCode == 32) {
+    danraku += 1;
+    target.innerHTML += "<br>段落：" + danraku;
   }
 }
 
