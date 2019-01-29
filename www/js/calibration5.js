@@ -179,7 +179,7 @@ function handleKeydown(event) {
   target = document.getElementById("message");
   target.innerHTML = "keycode: " + keyCode + "<br>";
   if (48 <= keyCode && keyCode <= 90)
-    target.innerHTML += String.fromCharCode(keyCode);
+    target.innerHTML += String.fromCharCode(keyCode) + "<br>";
 
   var row;
   if (keyCode >= 48)
@@ -198,7 +198,7 @@ function handleKeydown(event) {
     }));
     target.innerHTML += "<br>" + x[row] + " " + y[row];
     if (xydata)
-      target.innerHTML += "<br>rcg:" + closest(xydata.x, xydata.y);
+      target.innerHTML += "<br>rcg:" + closest(xydata.x, xydata.y) + "<br>";
 
     // ターゲットの濃さをかえる
     var calcolor = document.getElementById("Pt" + row);
@@ -227,7 +227,7 @@ function handleKeydown(event) {
     // store_points_var = true;
     isSpaced = true;
     line += 1;
-    target.innerHTML += "<br>行：" + line;
+    target.innerHTML += "<br>行：" + line + "<br>";
   }
 }
 

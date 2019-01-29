@@ -10855,7 +10855,21 @@ function store_points(x, y, k) {
                 break;
               }
               
-
+              if(line && target.innerHTML){
+                if (target.innerHTML.slice(-1) == "○" ||target.innerHTML.slice(-1) == "●")
+                  target.innerHTML = target.innerHTML.slice(0, -4);
+                if (pred.x <= -1 || pred.x >= 1630)
+                  target.innerHTML += "○○○○";
+                else if (pred.x <= 652)
+                  target.innerHTML += "●○○○";
+                else if (pred.x <= 975)
+                  target.innerHTML += "○●○○";
+                else if (pred.x <= 1270)
+                  target.innerHTML += "○○●○";
+                else if (pred.x <= 1630)
+                  target.innerHTML += "○○○●";
+              }
+            
               // if (store_points_var) {
               //     drawCoordinates('blue',pred.x,pred.y); //draws the previous predictions
               //       //store the position of the past fifty occuring tracker preditions
