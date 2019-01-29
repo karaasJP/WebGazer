@@ -173,3 +173,12 @@ div#message {
     margin-top: 15px;
     margin-left: 15px;
 }
+
+/* canvas#plotting_canvas {
+    margin-top: -5px;
+    margin-left: -5px;
+} */
+
+body {
+    margin: 0px;
+}

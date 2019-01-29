@@ -10767,26 +10767,106 @@ function store_points(x, y, k) {
               else if (stockSize == 0)
                   divKey.style.backgroundColor = "rgb(250, 240, 240)";
                 
-                if (stockSize > 0) {
-                    strXYdata += "x: " + xydata.x;
-                    strXYdata += " y: " + xydata.y;
-                    strXYdata += " stock:" + stockSize + "\n";
-                    stockSize--;
-                }
+              if (stockSize > 0) {
+                  strXYdata += "x: " + xydata.x;
+                  strXYdata += " y: " + xydata.y;
+                  strXYdata += " stock:" + stockSize + "\n";
+                  stockSize--;
+              }
               
+              switch (line) {
+                case 1:
+                  drawCoordinates('lightblue', pred.x, pred.y);
+                break;
+
+                case 2:
+                  drawCoordinates('cyan', pred.x, pred.y);
+                break;
+
+                case 3:
+                  drawCoordinates('deepskyblue', pred.x, pred.y);
+                break;
+
+                case 4:
+                  drawCoordinates('blue', pred.x, pred.y);
+                break;
+
+                case 5:
+                  drawCoordinates('darkblue', pred.x, pred.y);
+                break;
+
+                case 6:
+                  drawCoordinates('wheat', pred.x, pred.y);
+                break;
+
+                case 7:
+                  drawCoordinates('khaki', pred.x, pred.y);
+                break;
+
+                case 8:
+                  drawCoordinates('gold', pred.x, pred.y);
+                break;
+
+                case 9:
+                  drawCoordinates('chocolate', pred.x, pred.y);
+                break;
+
+                case 10:
+                  drawCoordinates('lightgreen', pred.x, pred.y);
+                break;
+
+                case 11:
+                  drawCoordinates('olive', pred.x, pred.y);
+                break;
+
+                case 12:
+                  drawCoordinates('olivedrab', pred.x, pred.y);
+                break;
+
+                case 13:
+                  drawCoordinates('lawngreen', pred.x, pred.y);
+                break;
+
+                case 14:
+                  drawCoordinates('springgreen', pred.x, pred.y);
+                break;
+
+                case 15:
+                  drawCoordinates('coral', pred.x, pred.y);
+                break;
+
+                case 16:
+                  drawCoordinates('tomato', pred.x, pred.y);
+                break;
+
+                case 17:
+                  drawCoordinates('crimson', pred.x, pred.y);
+                break;
+
+                case 18:
+                  drawCoordinates('red', pred.x, pred.y);
+                break;
+
+                case 19:
+                  drawCoordinates('pink', pred.x, pred.y);
+                break;
+
+                case 20:
+                break;
+              }
               
 
-                if (store_points_var) {
-                    drawCoordinates('blue',pred.x,pred.y); //draws the previous predictions
-                    //store the position of the past fifty occuring tracker preditions
-                    store_points(pred.x, pred.y, k);
-                    k++;
-                    if (k == 50) {
-                        k = 0;
-                    }
-                }
+              // if (store_points_var) {
+              //     drawCoordinates('blue',pred.x,pred.y); //draws the previous predictions
+              //       //store the position of the past fifty occuring tracker preditions
+              //     store_points(pred.x, pred.y, k);
+              //     k++;
+              //     if (k == 50) {
+              //         k = 0;
+              //   }
+              // }
                 // GazeDot
-                gazeDot.style.transform = 'translate3d(' + pred.x + 'px,' + pred.y + 'px,0)';
+             gazeDot.style.transform = 'translate3d(' + pred.x + 'px,' + pred.y + 'px,0)';
             }
 
             requestAnimationFrame(loop);

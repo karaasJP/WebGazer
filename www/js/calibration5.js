@@ -8,6 +8,7 @@ var avgXdataStock = 0;
 var avgYdataStock = 0;
 var stockSize = 0;
 var line = 0;
+var isSpaced = false;
 
 window.onload = function () {
 
@@ -69,12 +70,19 @@ times.fill(0);
 
 var x = new Array(10);
 var y = new Array(10);
+// x[1] = x[4] = x[7] = 398;
+// x[2] = x[5] = x[8] = 973;
+// x[3] = x[6] = x[9] = 1549;
+// y[1] = y[2] = y[3] = 43;
+// y[4] = y[5] = y[6] = 459;
+// y[7] = y[8] = y[9] = 875;
+
 x[1] = x[4] = x[7] = 398;
 x[2] = x[5] = x[8] = 973;
 x[3] = x[6] = x[9] = 1549;
 y[1] = y[2] = y[3] = 43;
-y[4] = y[5] = y[6] = 459;
-y[7] = y[8] = y[9] = 875;
+y[4] = y[5] = y[6] = 476;
+y[7] = y[8] = y[9] = 907;
 
 for (var i = 1; i <= 9; i++) {
   strXYdata += "x: " + x[i] + " y: " + y[i] + " button: " + i;
@@ -214,7 +222,10 @@ function handleKeydown(event) {
   if (keyCode == 83) {
     stockSize = 10;
   }
+  // スペースを押したとき
   if (keyCode == 32) {
+    // store_points_var = true;
+    isSpaced = true;
     line += 1;
     target.innerHTML += "<br>行：" + line;
   }
