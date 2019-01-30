@@ -10855,19 +10855,40 @@ function store_points(x, y, k) {
                 break;
               }
               
-              if(line && target.innerHTML){
+              if (line <= 19 && typeof target === "undefined"){
                 if (target.innerHTML.slice(-1) == "○" ||target.innerHTML.slice(-1) == "●")
                   target.innerHTML = target.innerHTML.slice(0, -4);
-                if (pred.x <= -1 || pred.x >= 1630)
+                if (pred.x <= -1 || pred.x >= 1630) {
                   target.innerHTML += "○○○○";
-                else if (pred.x <= 652)
+                }
+                else if (pred.x <= 652) {
                   target.innerHTML += "●○○○";
-                else if (pred.x <= 975)
+                  if (line >= 15)
+                    checkBlock[6] += 1;
+                  else
+                    checkBlock[7] += 1;
+                }
+                else if (pred.x <= 975) {
                   target.innerHTML += "○●○○";
-                else if (pred.x <= 1270)
+                  if (10 <= line && line <= 14)
+                    checkBlock[4] += 1;
+                  else
+                    checkBlock[5] += 1;
+                }
+                else if (pred.x <= 1270) {
                   target.innerHTML += "○○●○";
-                else if (pred.x <= 1630)
+                  if (6 <= line && line <= 9)
+                    checkBlock[2] += 1;
+                  else
+                    checkBlock[3] += 1;
+                }
+                else if (pred.x <= 1630) {
                   target.innerHTML += "○○○●";
+                  if (1 <= line && line <= 5)
+                    checkBlock[0] += 1;
+                  else
+                    checkBlock[1] += 1;
+                }
               }
             
               // if (store_points_var) {

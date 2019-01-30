@@ -1,14 +1,13 @@
 var xydata;
 var strXYdata = "";
-var xdataStock = new Array(5);
-var ydataStock = new Array(5);
-xdataStock.fill(0);
-ydataStock.fill(0);
+var xdataStock = new Array(5).fill(0);
+var ydataStock = new Array(5).fill(0);
 var avgXdataStock = 0;
 var avgYdataStock = 0;
 var stockSize = 0;
 var line = 0;
 var isSpaced = false;
+var checkBlock = new Array(8).fill(0);
 
 window.onload = function () {
 
@@ -151,23 +150,6 @@ var storingData = function (row) {
 
 var sum;
 
-// if (xydata) {
-//   xdataStock = xdataStock.shift();
-//   xdataStock = xdataStock.push(xydata.x);
-//   for (i = 0; i < xdataStock.length; i++) {
-//     sum = xdataStock[i];
-//   }
-//   avgXdataStock += sum / xdataStock.length;
-// }
-// if (xydata) {
-//   ydataStock = ydataStock.shift();
-//   ydataStock = ydataStock.push(xydata.y);
-//   for (i = 0; i < ydataStock.length; i++) {
-//     sum = ydataStock[i];
-//   }
-//   avgYdataStock += sum / xdataStock.length;
-// }
-
 function handleKeydown(event) {
   if (xydata) {
     console.log("x: " + xydata.x);
@@ -210,8 +192,10 @@ function handleKeydown(event) {
   }
 
   // o(オー)を押したら出力
-  if (keyCode == 79)
+  if (keyCode == 79) {
+    strXYdata += checkBlock;
     outputTxt();
+  }
 
   // 0(zero)を押したとき
   if (keyCode == 48) {
