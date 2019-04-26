@@ -182,3 +182,10 @@ div#message {
 body {
     margin: 0px;
 }
+
+hr {
+    height: 5px;
+    background-color: red;
+    width: 200px;
+    border: none;
+}

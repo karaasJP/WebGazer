@@ -69,12 +69,6 @@ times.fill(0);
 
 var x = new Array(10);
 var y = new Array(10);
-// x[1] = x[4] = x[7] = 398;
-// x[2] = x[5] = x[8] = 973;
-// x[3] = x[6] = x[9] = 1549;
-// y[1] = y[2] = y[3] = 43;
-// y[4] = y[5] = y[6] = 459;
-// y[7] = y[8] = y[9] = 875;
 
 x[1] = x[4] = x[7] = 398;
 x[2] = x[5] = x[8] = 973;
@@ -88,20 +82,6 @@ for (var i = 1; i <= 9; i++) {
   strXYdata += "\n";
 }
 strXYdata += "\n";
-
-// var insertSpace = function (num) {
-//   num = String(num);
-//   if (num.length == 4) {
-//     num = num + " ";
-//   } else if (num.length == 3) {
-//     num = num + "  ";
-//   } else if (num.length == 2) {
-//     num = num + "   ";
-//   } else {
-//     num = num + "    ";
-//   }
-//   return num;
-// };
 
 var getDistance = function (posX1, posY1, posX2, posY2) {
   return Math.sqrt(Math.pow(posX1 - posX2, 2) + Math.pow(posY1 - posY2, 2));
@@ -125,8 +105,6 @@ var closest = function (posX, posY) {
 
 var storingData = function (row) {
   if (xydata) {
-    // xydata.x = insertSpace(xydata.x);
-    // xydata.y = insertSpace(xydata.y);
     strXYdata += "x: " + xydata.x;
     strXYdata += " y: " + xydata.y;
     strXYdata += " button: " + row;
@@ -145,7 +123,6 @@ var storingData = function (row) {
   }
   times[row]++;
   times[10]++;
-  // strXYdata += " sum: " + String(times[10]) + "\n";
 };
 
 var sum;

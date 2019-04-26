@@ -29,9 +29,6 @@ function gotDevices(deviceInfos) {
 
   var options = document.getElementById('videoSource').options;
   console.log(options);
-
-  // options[1].selected = true;  // 2番めをセレクテッドする
-
 }
 
 function getStream() {

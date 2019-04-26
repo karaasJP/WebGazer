@@ -10855,7 +10855,7 @@ function store_points(x, y, k) {
                 break;
               }
               
-              if (line <= 19 && typeof target === "undefined"){
+              if (line <= 19 && !(typeof target === "undefined")){
                 if (target.innerHTML.slice(-1) == "○" ||target.innerHTML.slice(-1) == "●")
                   target.innerHTML = target.innerHTML.slice(0, -4);
                 if (pred.x <= -1 || pred.x >= 1630) {
